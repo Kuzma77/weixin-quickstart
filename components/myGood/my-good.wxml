@@ -1,0 +1,19 @@
+<!--components/my-good/my-good.wxml-->
+<view class="my-container">
+  <view class="header">
+  <text>{{head}}</text>
+  </view>
+  <view class="list">  
+  <block wx:for="{{list}}" wx:for-item="item" >
+  <view class="list-item">
+  <view class="my-img"> <image src="{{item.img}}"></image></view>
+  <view class="infos">
+    <text class="name"  bindtap="onTap" data-item="{{item}}">{{item.name}}</text>
+    <text class="count">{{item.count}}￥</text>
+    <text class="others">45人付款</text>
+  </view>
+  </view>
+  </block>
+  </view>
+</view>
+

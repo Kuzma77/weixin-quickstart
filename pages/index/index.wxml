@@ -1,0 +1,54 @@
+<!--index.wxml-->
+<view class="container">
+  <view class="userinfo">
+    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
+    <block wx:else>
+      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+    </block>
+  </view>
+  <view class="study-list">
+  <view class="row">
+  <view class="col" bindtap="bindEnter" data-item="todoList">
+  <text>TodoList</text>
+  </view>
+  <view class="col" bindtap="bindEnter" data-item="goods">
+  <text>Store</text>
+  </view>
+  <view class="col" bindtap="bindEnter" data-item="musicList">
+  <text>Music</text>
+  </view>
+  </view>
+  <view class="row" bindtap="bindEnter" data-item="todoList">
+  <view class="col">
+  <text>4</text>
+  </view>
+  <view class="col" bindtap="bindEnter" data-item="todoList">
+  <text>5</text>
+  </view>
+  <view class="col" bindtap="bindEnter" data-item="todoList">
+  <text>6</text>
+  </view>
+  </view>
+   <view class="row" bindtap="bindEnter" data-item="todoList">
+  <view class="col">
+  <text>7</text>
+  </view>
+  <view class="col" bindtap="bindEnter" data-item="todoList">
+  <text>8</text>
+  </view>
+  <navigator url="../../pages/detail/detail?name='111'" hover-class="navigator-hover">
+  <view class="col">
+  <text>9</text>
+  </view>
+  </navigator>
+  </view>
+  </view>
+  <!-- <view class="usermotto">
+    <text class="user-motto">{{motto}}</text>
+    <button bindtap="bindChange">跳转</button>
+  </view>
+  <view class="music-list">
+  <audio  src="http://niit-soft.oss-cn-hangzhou.aliyuncs.com/mp3/K%E6%AD%8C%E4%B9%8B%E7%8E%8B%20%28%E7%B2%A4%E8%AF%AD%29%20-%20%E9%99%88%E5%A5%95%E8%BF%85.mp3" controls="true" author="陈奕迅" name="K歌之王"  loop="true"></audio>
+  </view> -->
+</view>

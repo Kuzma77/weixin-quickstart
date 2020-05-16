@@ -1,0 +1,8 @@
+<!--pages/musicList/musicList.wxml-->
+<view class="list">
+<scroll-view wx:for="{{musicList}}" wx:for-item="item">
+<view class="music-item">
+<audio  src="{{item.src}}" controls="true" author="{{item.author}}" name="{{item.name}}"  loop="true" poster="{{item.img}}"></audio>
+</view>
+</scroll-view>
+</view>

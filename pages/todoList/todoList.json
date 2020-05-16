@@ -1,0 +1,5 @@
+{
+  "navigationBarTitleText": "TodoList",
+  "usingComponents": {},
+  "enablePullDownRefresh": true
+}

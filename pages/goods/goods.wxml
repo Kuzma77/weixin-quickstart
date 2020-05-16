@@ -1,0 +1,5 @@
+<view class="container">
+<!-- <button bindtap="showComponent">组件调用</button> -->
+  <my-good list="{{goods}}" head="鞋店：" bindmyevent="onMyEvent" class="my-container">
+  </my-good>
+</view>

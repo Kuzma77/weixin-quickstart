@@ -1,0 +1,11 @@
+.container{
+  display: flex;
+  padding: 10px;
+  justify-content: flex-start;
+  align-items: flex-start;
+  width: 100%;
+}
+/* .my-container{
+  color: blue;
+  background-color: orange;
+} */

@@ -1,0 +1,56 @@
+/* pages/detail/detail.wxss */
+.container{
+  display: flex;
+  padding: 5rpx;
+}
+.card{
+  display: flex;
+  width: 100%;
+  padding: 15rpx;
+  height: 100%;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.c-head{
+  width: 100%;
+  flex: 0 0 40%;
+}
+image{
+  width: 80%;
+  height: 400rpx;
+}
+.c-body{
+  width: 100%;
+  flex: 0 0 40%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  padding: 20rpx;
+  background-color: pink;
+}
+.c-buttom{
+  flex: 0 0 20%;
+  width: 100%;
+  position: relative;
+}
+button{
+  margin-top: 5rpx;
+  position: absolute;
+  right: 0;
+  background-color: orange;
+}
+.name{
+  font-weight: 700;
+  font-size: 50rpx;
+  margin-bottom: 20rpx;
+}
+.count{
+  font-size: 40rpx;
+  color: orange;
+  margin-bottom: 20rpx;
+}
+.others{
+  font-size: 35rpx;
+  color: gray;
+  margin-bottom: 20rpx;
+}

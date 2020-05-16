@@ -1,0 +1,16 @@
+<!--pages/todoList/toduList.wxml-->
+<view class="container">
+<input class="item-input" placeholder="请输入todo" value="{{addText}}" bindinput="setInput" focus="{{focus}}" />
+<view class="addForm-btn">
+        <button class="btn" type="default" bindtap="addTodo" size="mini">确定添加</button>
+        <button class="btn" type="warn" bindtap="addTodoHide" size="mini">清空文本框</button>
+</view>
+  <text>未完成</text>
+  <block wx:for="{{list}}" wx:for-item="item" class="item-list">
+    <text class="item" wx:if="{{item.status===1}}" bindtap="changeStatus" data-item="{{item.id}}">{{item.name}}</text>
+  </block>
+  <text>已完成</text>
+  <block wx:for="{{list}}" wx:for-item="item" class="item-list">
+    <text class="item" wx:if="{{item.status===0}}"  bindtap="changeStatus" data-item="{{item.id}}">{{item.name}}</text>
+  </block>
+</view>

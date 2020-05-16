@@ -1,0 +1,15 @@
+<!--pages/detail/detail.wxml-->
+<view class="container">
+<view class="card"></view>
+<view class="c-head">
+<image src="{{item.img}}"></image>
+</view>
+<view class="c-body">
+   <text class="name">{{item.name}}</text>
+    <text class="count">{{item.count}}￥</text>
+    <text class="others">45人付款</text>
+</view>
+<view class="c-buttom">
+<button>购买</button>
+</view>
+</view>
