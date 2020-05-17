@@ -5,10 +5,16 @@
     "pages/todoList/todoList",
     "pages/goods/goods",
     "pages/detail/detail",
-    "pages/musicList/musicList"
+    "pages/musicList/musicList",
+    "pages/wyy/index",
+    "pages/wyy/info",
+    "pages/wyy/play",
+    "pages/wyy/playlist"
   ],
   "window":{
     "backgroundTextStyle":"light",
+    "backgroundColorTop":"",
+    "backgroundColorBottom":"",
     "navigationBarBackgroundColor": "#c45a65",
     "navigationBarTitleText": "WeChat",
     "navigationBarTextStyle":"white"
@@ -17,6 +23,7 @@
     "color":"#000000",
     "selectedColor":"#f0a1a8",
     "backgroundColor":"#c45a65",
+    "borderStyle":"black",
     "list":[
       {
         "pagePath":"pages/index/index",
@@ -32,6 +39,8 @@
       }
     ]
   },
+  "darkmode": true,
   "style": "v2",
-  "sitemapLocation": "sitemap.json"
+  "sitemapLocation": "sitemap.json",
+  "themeLocation": "theme.json"
 }

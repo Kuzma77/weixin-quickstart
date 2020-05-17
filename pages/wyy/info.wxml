@@ -1,0 +1,76 @@
+<!--pages/wyy/info.wxml-->
+<template name="info">
+<view class="container">
+<scroll-view  class="content-info" scroll-y>
+<view class="content-info-silde">
+<swiper class="content-info-silde" indicator-color="rgba(255,255,255,.5)" indicator-active-color="#fff" indicator-dots circular autoplay current="{{swiperCurrent}}" bindchange="changeTab">
+<block wx:for="{{list}}" wx:for-item="item">
+<swiper-item id="image-item">
+<image src="{{item.src}}"></image>
+</swiper-item>
+</block>
+</swiper>
+</view>
+<view class="content-info-item">
+<view class="info-item">
+<image  class="img" src="/images/music/02.jpg"></image>
+<text>私人FM</text>
+</view>
+<view class="info-item">
+<image class="img" src="/images/music/02.jpg"></image>
+<text>排行榜</text>
+</view>
+<view class="info-item">
+<image class="img" src="/images/music/02.jpg"></image>
+<text>电台</text>
+</view>
+</view>
+<view class="content-info-card">
+<text>热门音乐</text>
+<view class="row">
+<view class="col">
+<view class="card">
+<image class="card-image" src="/images/music/03.jpg"></image>
+<text>紫罗兰</text>
+</view>
+</view>
+<view class="col">
+<view class="card">
+<image class="card-image" src="/images/music/03.jpg"></image>
+<text>夏天的风</text>
+</view>
+</view>
+<view class="col">
+<view class="card">
+<image class="card-image" src="/images/music/03.jpg"></image>
+<text>温柔</text>
+</view>
+</view>
+</view>
+
+<view class="row">
+<view class="col">
+<view class="card">
+<image class="card-image" src="/images/music/03.jpg"></image>
+<text>分手跳跃</text>
+</view>
+</view>
+<view class="col">
+<view class="card">
+<image class="card-image" src="/images/music/03.jpg"></image>
+<text>最近</text>
+</view>
+</view>
+<view class="col">
+<view class="card">
+<image class="card-image" src="/images/music/03.jpg"></image>
+<text>可乐</text>
+</view>
+</view>
+</view>
+
+</view>
+</scroll-view>
+
+</view>
+</template>

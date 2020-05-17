@@ -1,0 +1,13 @@
+/* pages/wyy/playlist.wxss */
+.list{
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+  padding: 5rpx;
+}
+.music-item{
+  display: flex;
+  align-content: center;
+  justify-content: center;
+}

@@ -1,0 +1,47 @@
+/* pages/wyy/info.wxss */
+.container{
+  display: flex;
+  flex-direction: column;
+  height: auto;
+  width: 100%;
+}
+.img-top{
+  width: 100%;
+  height: 200rpx;
+}
+.content-info-silde{
+  margin-bottom: 20rpx;
+}
+.img{
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 50%;
+}
+.content-info-item{
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+}
+.info-item{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.content-info-card{
+  padding: 20rpx;
+  margin-top: 20rpx;
+}
+.row{
+  display: flex;
+  justify-content: space-around;
+}
+.col{
+  width: 200rpx;
+  height: 250rpx;
+  margin: 10rpx;
+  display: flex;
+}
+.card-image{
+  width: 200rpx;
+  height: 200rpx;
+}

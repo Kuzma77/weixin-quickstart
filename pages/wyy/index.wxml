@@ -1,0 +1,19 @@
+<!--pages/wyy/wyy.wxml-->
+<view class="container">
+<view class="tab">
+<view class="tab-item {{tab==0?'active':''}}" bindtap="changeItem" data-item="0">音乐推荐</view>
+<view class="tab-item {{tab==1?'active':''}}" bindtap="changeItem" data-item="1">播放器</view>
+<view class="tab-item {{tab==2?'active':''}}" bindtap="changeItem" data-item="2">播放列表</view>
+</view>
+<view class="content"> 
+<import src="../../pages/wyy/info.wxml"/>
+<import src="../../pages/wyy/play.wxml"/>
+<import src="../../pages/wyy/playlist.wxml"/>
+<template wx:if="{{tab==0}}" is="info" data="{{list: silderList}}"/>
+<template wx:if="{{tab==1}}" is="play" />
+<template wx:if="{{tab==2}}" is="playlist" data="{{musicList: playList}}"  />
+</view>
+<view class="player">
+<view class="playInfo"></view>
+</view>
+</view>

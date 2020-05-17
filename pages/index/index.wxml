@@ -19,10 +19,12 @@
   <text>Music</text>
   </view>
   </view>
-  <view class="row" bindtap="bindEnter" data-item="todoList">
+  <view class="row">
+  <navigator url="../../pages/wyy/index">
   <view class="col">
-  <text>4</text>
+  <text>网易云</text>
   </view>
+  </navigator>
   <view class="col" bindtap="bindEnter" data-item="todoList">
   <text>5</text>
   </view>
