@@ -22,19 +22,19 @@
   <view class="row">
   <navigator url="../../pages/wyy/index">
   <view class="col">
-  <text>网易云</text>
+  <text>WYY</text>
   </view>
   </navigator>
-  <view class="col" bindtap="bindEnter" data-item="todoList">
-  <text>5</text>
+  <view class="col" bindtap="bindEnter" data-item="compare">
+  <text>Compare</text>
   </view>
-  <view class="col" bindtap="bindEnter" data-item="todoList">
-  <text>6</text>
+  <view class="col" bindtap="bindEnter" data-item="questionnaire">
+  <text>Question</text>
   </view>
   </view>
-   <view class="row" bindtap="bindEnter" data-item="todoList">
+   <view class="row" bindtap="bindEnter" data-item="calculator">
   <view class="col">
-  <text>7</text>
+  <text>Calculator</text>
   </view>
   <view class="col" bindtap="bindEnter" data-item="todoList">
   <text>8</text>

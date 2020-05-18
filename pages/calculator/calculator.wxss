@@ -1,0 +1,46 @@
+/* pages/calculator/calculator.wxss */
+.container{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding: 0;
+}
+.result{
+  flex: 1;
+  display: flex;
+  background-color: #274555;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 300px;
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+text{
+  padding: 10rpx;
+  font-size: 120rpx;
+  font-weight: 700;
+  color: #ff7761;
+}
+.btns{
+  position: fixed;
+  bottom: 0;
+  flex: 0;
+  display: flex;
+  flex-direction: column;
+  font-size: 17pt;
+}
+.btn-row{
+  display: flex;
+  padding: 0;
+  margin: 0;
+}
+.btn-col{
+  width: 80px;
+  display: flex;
+  border: 1rpx solid #ccc;
+}
+button{
+  background-color: #f9a11b;
+}

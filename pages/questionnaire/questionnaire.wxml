@@ -1,0 +1,36 @@
+<!--pages/questionnaire/questionnaire.wxml-->
+<view class="container">
+<form bindsubmit="submit">
+<view>
+<text>姓名：</text>
+<input type="text" data-name="{{name}}" bindinput="bindName"></input>
+</view>
+<view>
+<text>性别：</text>
+<radio-group bindchange="radioChange">
+        <label wx:for="{{sex}}" wx:key="{{item.value}}">
+          <view>
+            <radio value="{{item.value}}" checked="{{item.checked}}"/>
+          </view>
+          <view>{{item.value}}</view>
+        </label>
+</radio-group>
+</view>
+<view>
+<text>专业技能</text>
+<checkbox-group bindchange="checkboxChange">
+          <label wx:for="{{study}}" wx:key="{{item.value}}">
+            <view>
+              <checkbox value="{{item.value}}" checked="{{item.checked}}"/>
+            </view>
+            <view>{{item.value}}</view>
+          </label>
+</checkbox-group>
+</view>
+<view>
+<text>您的意见：</text>
+<input type="text" data-advice="{{advice}}" bindinput="bindAdvice"></input>
+</view>
+<button form-type="submit">提交</button>
+</form>
+</view>

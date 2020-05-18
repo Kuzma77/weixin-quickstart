@@ -1,0 +1,83 @@
+<!--pages/calculator/calculator.wxml-->
+<view class="container">
+<view class="result">
+<text>{{result}}</text>
+</view>
+<view class="btns">
+<view class="btn-row">
+<view class="btn-col">
+<button class="btn" type="warn" bindtap="bindZero">C</button>
+</view>
+<view class="btn-col">
+<button class="btn" bindtap="bindDel">DEL</button>
+</view>
+<view class="btn-col">
+<button class="btn" bindtap="bindText" data-text="%">%</button>
+</view>
+<view class="btn-col">
+<button class="btn" bindtap="bindText" data-text="/">/</button>
+</view>
+</view>
+
+<view class="btn-row">
+<view class="btn-col">
+<button class="btn" bindtap="bindText" data-text="7">7</button>
+</view>
+<view class="btn-col">
+<button class="btn" bindtap="bindText" data-text="8">8</button>
+</view>
+<view class="btn-col">
+<button class="btn" bindtap="bindText" data-text="9">9</button>
+</view>
+<view class="btn-col">
+<button class="btn" bindtap="bindText" data-text="*">*</button>
+</view>
+</view>
+
+<view class="btn-row">
+<view class="btn-col">
+<button class="btn" bindtap="bindText" data-text="4">4</button>
+</view>
+<view class="btn-col">
+<button class="btn" bindtap="bindText" data-text="5">5</button>
+</view>
+<view class="btn-col">
+<button class="btn" bindtap="bindText" data-text="6">6</button>
+</view>
+<view class="btn-col">
+<button class="btn" bindtap="bindText" data-text="-">-</button>
+</view>
+</view>
+
+<view class="btn-row">
+<view class="btn-col">
+<button class="btn" bindtap="bindText" data-text="1">1</button>
+</view>
+<view class="btn-col">
+<button class="btn" bindtap="bindText" data-text="2">2</button>
+</view>
+<view class="btn-col">
+<button class="btn" bindtap="bindText" data-text="3">3</button>
+</view>
+<view class="btn-col">
+<button class="btn" bindtap="bindText" data-text="+">+</button>
+</view>
+</view>
+
+<view class="btn-row">
+<view class="btn-col">
+<button class="btn" bindtap="bindText" data-text="0">0</button>
+</view>
+<view class="btn-col">
+<button class="btn" bindtap="bindText" data-text=".">.</button>
+</view>
+<view class="btn-col">
+<button class="btn">0.00</button>
+</view>
+<view class="btn-col">
+<button class="btn" bindtap="bindResult">=</button>
+</view>
+</view>
+
+</view>
+</view>

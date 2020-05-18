@@ -9,7 +9,10 @@
     "pages/wyy/index",
     "pages/wyy/info",
     "pages/wyy/play",
-    "pages/wyy/playlist"
+    "pages/wyy/playlist",
+    "pages/compare/compare",
+    "pages/questionnaire/questionnaire",
+    "pages/calculator/calculator"
   ],
   "window":{
     "backgroundTextStyle":"light",
