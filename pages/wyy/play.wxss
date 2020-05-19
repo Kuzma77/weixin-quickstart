@@ -1,1 +1,28 @@
 /* pages/wyy/play.wxss */
+.content-play{
+  display: flex;
+  padding: 10rpx;
+  width: 100%;
+  height: 100%;
+  justify-content: space-around;
+  flex-direction: column;
+  text-align: center;
+}
+.content-play-info{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+.content-play-cover image{
+  animation: rotateImage 10s linear infinite;
+  width: 400rpx;
+  height: 400rpx;
+  border-radius: 50%;
+}
+@keyframes rotateImage{
+  from{transform: rotate(0deg);
+  }to{transform: rotate(360deg);}
+}
+

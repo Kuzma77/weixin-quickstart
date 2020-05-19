@@ -2,8 +2,13 @@
 <template name="playlist">
 <view class="list">
 <scroll-view wx:for="{{musicList}}" wx:for-item="item">
-<view class="music-item">
-<audio  src="{{item.src}}" controls="true" author="{{item.author}}" name="{{item.name}}"  loop="true" poster="{{item.img}}"></audio>
+<view class="music-item"  data-id="{{item.id-1}}" bindtap="changePlay">
+<image class="player-cover" src="{{item.img}}"></image>
+<view class="item-title">
+<text class="song-name">{{item.name}}</text>
+<text class="song-author">{{item.author}}</text>
+</view>
+<!-- <audio  src="{{item.src}}" controls="true" author="{{item.author}}" name="{{item.name}}"  loop="true" poster="{{item.img}}"></audio> -->
 </view>
 </scroll-view>
 </view>

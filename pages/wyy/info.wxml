@@ -6,7 +6,7 @@
 <swiper class="content-info-silde" indicator-color="rgba(255,255,255,.5)" indicator-active-color="#fff" indicator-dots circular autoplay current="{{swiperCurrent}}" bindchange="changeTab">
 <block wx:for="{{list}}" wx:for-item="item">
 <swiper-item id="image-item">
-<image src="{{item.src}}"></image>
+<image src="{{item.picUrl}}"></image>
 </swiper-item>
 </block>
 </swiper>
