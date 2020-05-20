@@ -11,66 +11,59 @@
 </block>
 </swiper>
 </view>
-<view class="content-info-item">
-<view class="info-item">
-<image  class="img" src="/images/music/02.jpg"></image>
-<text>私人FM</text>
-</view>
-<view class="info-item">
-<image class="img" src="/images/music/02.jpg"></image>
-<text>排行榜</text>
-</view>
-<view class="info-item">
-<image class="img" src="/images/music/02.jpg"></image>
-<text>电台</text>
-</view>
-</view>
-<view class="content-info-card">
-<text>热门音乐</text>
-<view class="row">
-<view class="col">
-<view class="card">
-<image class="card-image" src="/images/music/03.jpg"></image>
-<text>紫罗兰</text>
-</view>
-</view>
-<view class="col">
-<view class="card">
-<image class="card-image" src="/images/music/03.jpg"></image>
-<text>夏天的风</text>
-</view>
-</view>
-<view class="col">
-<view class="card">
-<image class="card-image" src="/images/music/03.jpg"></image>
-<text>温柔</text>
-</view>
-</view>
-</view>
-
-<view class="row">
-<view class="col">
-<view class="card">
-<image class="card-image" src="/images/music/03.jpg"></image>
-<text>分手跳跃</text>
-</view>
-</view>
-<view class="col">
-<view class="card">
-<image class="card-image" src="/images/music/03.jpg"></image>
-<text>最近</text>
-</view>
-</view>
-<view class="col">
-<view class="card">
-<image class="card-image" src="/images/music/03.jpg"></image>
-<text>可乐</text>
-</view>
-</view>
-</view>
-
-</view>
+<!-- 推荐导航四大入口 -->
+    <view class='comment_container_box'>
+      <view class='comment_daily comment_box' bindtap="go_MV">
+        <view class='contaner_images'>
+          <image src='/images/music/MV.png' class='commentImage'></image>
+        </view>
+        <text class='comment_text'>推荐MV</text>
+      </view>
+      <view class='comment_private_FM comment_box'>
+        <view class='contaner_images' bindtap='go_songer'>
+          <image src='/images/music/songer.png' class='commentImage'></image>
+        </view>
+        <text class='comment_text'>歌手榜</text>
+      </view>
+      <view class='comment_songList comment_box' bindtap="go_songsheet">
+        <view class='contaner_images'>
+          <image src='/images/music/songList.png' class='commentImage'></image>
+        </view>
+        <text class='comment_text'>歌单</text>
+      </view>
+      <view class='comment_rank comment_box' bindtap='go_toplist'>
+        <view class='contaner_images'>
+          <image src='/images/music/rank.png' class='commentImage'></image>
+        </view>
+        <text class='comment_text'>榜单排行</text>
+      </view>
+    </view>
+ <view class='songsheet_items_allbox newsong_allbox'>
+      <text class='songsheet_container_title' bindtap="go_newsong">最新音乐</text>
+      <view class='title_leader_box' bindtap="go_newsong">
+        <image src='/images/music/dayuhao.png' class='title_leader'></image>
+      </view>
+      <view class='songsheet_items_box'>
+        <view wx:for="{{newsong_index}}" wx:key="" class='songsheet_item_box' data-id="{{item.id}}" bindtap='handlePlayAudio'>
+          <image src='{{item.song.album.picUrl}}' class="songsheet_container_image"></image>
+          <text class='songsheet_container_text newsong_songname'>{{item.name}}</text>
+          <text class='newsong_artists'>{{item.song.artists[0].name}}</text>
+        </view>
+      </view>
+    </view>
+    <!-- 精选歌单 -->
+    <view class='songsheet_items_allbox'>
+      <text class='songsheet_container_title' bindtap="go_songsheet">精选歌单</text>
+      <view class='title_leader_box' bindtap="go_songsheet">
+        <image src='/images/music/dayuhao.png' class='title_leader'></image>
+      </view>
+      <view class='songsheet_items_box'>
+        <view wx:for="{{songsheet_index}}" wx:key="" class='songsheet_item_box' data-id="{{item.id}}" bindtap='handleSheet'>
+          <image src='{{item.coverImgUrl}}' class="songsheet_container_image"></image>
+          <text class='songsheet_container_text'>{{item.name}}</text>
+        </view>
+      </view>
+    </view>
 </scroll-view>
-
 </view>
 </template>

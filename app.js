@@ -43,6 +43,17 @@ App({
     // })
   },
   globalData: {
-    userInfo: null
+    userInfo: null,
+    audioId: '458348749',
+    playList:[],
+    play:{
+      name:'那个短发姑娘(Demo)',
+      al:{
+        picUrl:'https://p1.music.126.net/IT1ESyrIKhtmCc1XkEsPiA==/109951162835935771.jpg'
+      },
+      ar:{
+        name:'杨力'
+      }
+    }
   }
 })

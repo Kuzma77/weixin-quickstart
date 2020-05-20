@@ -37,6 +37,7 @@ page{
   height: 100%;
   width: 100%;
   background-color: rgb(60, 42, 42);
+  padding-bottom: 160rpx;
 }
 .player{
   position: fixed;

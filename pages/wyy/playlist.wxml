@@ -1,12 +1,12 @@
 <!--pages/wyy/playlist.wxml-->
 <template name="playlist">
 <view class="list">
-<scroll-view wx:for="{{musicList}}" wx:for-item="item">
-<view class="music-item"  data-id="{{item.id-1}}" bindtap="changePlay">
-<image class="player-cover" src="{{item.img}}"></image>
+<scroll-view wx:for="{{musicList}}" wx:for-item="item" >
+<view class="music-item"  data-id="{{item.audioId}}"  bindtap="handlePlayAudio">
+<image class="player-cover" src="{{item.play.al.picUrl}}"></image>
 <view class="item-title">
-<text class="song-name">{{item.name}}</text>
-<text class="song-author">{{item.author}}</text>
+<text class="song-name">{{item.play.al.name}}</text>
+<text class="song-author">{{item.play.ar[0].name}}</text>
 </view>
 <!-- <audio  src="{{item.src}}" controls="true" author="{{item.author}}" name="{{item.name}}"  loop="true" poster="{{item.img}}"></audio> -->
 </view>

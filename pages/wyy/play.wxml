@@ -2,12 +2,11 @@
 <template name="play">
 <view class="content-play">
 <view class="content-play-info">
-<text>{{msg}}</text>
 <text>{{play.name}}</text>
-<view>——{{play.author}}——</view>
+<view>——{{play.ar.name}}——</view>
 </view>
 <view class="content-play-cover">
- <image src="{{play.img}}" style="animation-play-state:{{state}}"></image>
+ <image src="{{play.al.picUrl}}" style="animation-play-state:{{state}}"></image>
 </view>
 <slider activeColor="#d33a31" block-size="12" backgroundColor="#dadada" value="{{duration}}"></slider>
 </view>

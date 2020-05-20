@@ -1,0 +1,39 @@
+/* pages/wyy/moreSongs.wxss */
+@import "../../pages/wyy/index.wxss";
+
+.songsheet_item_box{
+  width: 50%;
+  padding-top: 10rpx;
+  display: inline-block;
+  box-sizing: border-box;
+}
+.songsheet_container_image{
+  height: 335rpx;
+}
+.newsong_artists{
+  padding-left:20rpx;
+}
+.search_result_songs{
+  margin-top: 100rpx;
+  width: 100%;
+  height: 100%;
+}
+.search_result_song_item{
+   display: block;
+   /* background-color: #EDEEF0; */
+   /* border-radius: 15rpx; */
+   margin: 15rpx;
+   border-bottom: 1px solid #EDEEF0;
+}
+.search_result_song_song_name{
+  font-size: 15px;
+  color: #ffffff;
+  /* letter-spacing: 2rpx; */
+  margin-bottom: 15rpx;
+}
+.search_result_song_song_art-album{
+  font-size: 11px;
+  color: #ffffff;
+  font-weight:lighter;
+  margin-bottom: 5rpx;
+}

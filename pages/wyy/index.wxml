@@ -9,16 +9,16 @@
 <import src="../../pages/wyy/info.wxml"/>
 <import src="../../pages/wyy/play.wxml"/>
 <import src="../../pages/wyy/playlist.wxml"/>
-<template wx:if="{{tab==0}}" is="info" data="{{list: banner}}"/>
+<template wx:if="{{tab==0}}" is="info" data="{{list: banner,newsong_index:newsong_index,songsheet_index:songsheet_index}}"/>
 <template wx:if="{{tab==1}}" is="play" data="{{play: play}}"/>
 <template wx:if="{{tab==2}}" is="playlist" data="{{musicList: playList}}"/>
 </view>
 <view class="player">
 <view class="player-info">
-<image class="player-cover" src="{{playList[playIndex].img}}"></image>
+<image class="player-cover" src="{{play.al.picUrl}}"></image>
 <view class="player-title">
-<text class="song-name">{{playList[playIndex].name}}</text>
-<text class="song-author">{{playList[playIndex].author}}</text>
+<text class="song-name">{{play.name}}</text>
+<text class="song-author">{{play.ar[0].name}}</text>
 </view>
 <view class="player-controller">
 <image src="/images/music/047caozuo_shangyishou.png" class="bofang-img" bindtap="per"></image>
