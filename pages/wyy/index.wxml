@@ -10,7 +10,7 @@
 <import src="../../pages/wyy/play.wxml"/>
 <import src="../../pages/wyy/playlist.wxml"/>
 <template wx:if="{{tab==0}}" is="info" data="{{list: banner,newsong_index:newsong_index,songsheet_index:songsheet_index}}"/>
-<template wx:if="{{tab==1}}" is="play" data="{{play: play}}"/>
+<template wx:if="{{tab==1}}" is="play" data="{{play: play,duration:duration,percent:percent,showTime1:showTime1,showTime2:showTime2}}"/>
 <template wx:if="{{tab==2}}" is="playlist" data="{{musicList: playList}}"/>
 </view>
 <view class="player">

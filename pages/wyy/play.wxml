@@ -8,6 +8,9 @@
 <view class="content-play-cover">
  <image src="{{play.al.picUrl}}" style="animation-play-state:{{state}}"></image>
 </view>
-<slider activeColor="#d33a31" block-size="12" backgroundColor="#dadada" value="{{duration}}"></slider>
+<view class="content-play-silder">
+<slider activeColor="#d33a31" block-size="12" backgroundColor="#dadada" value="{{percent}}" min="0" max="{{duration}}"  bindchange="sliderChange"></slider>
+<text>{{showTime1}}/{{showTime2}}</text>
+</view>
 </view>
 </template>

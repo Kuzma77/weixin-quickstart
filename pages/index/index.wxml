@@ -32,18 +32,21 @@
   <text>Question</text>
   </view>
   </view>
-   <view class="row" bindtap="bindEnter" data-item="calculator">
+   <view class="row" bindtap="bindEnter" data-item="calculator1">
   <view class="col">
-  <text>Calculator</text>
+  <text>Calculator1</text>
   </view>
-  <view class="col" bindtap="bindEnter" data-item="todoList">
-  <text>8</text>
+  <view class="col" bindtap="bindEnter" data-item="calculator2">
+  <text>Calculator2</text>
   </view>
-  <navigator url="../../pages/detail/detail?name='111'" hover-class="navigator-hover">
+   <view class="col" bindtap="bindEnter" data-item="invotation">
+  <text>Invotation</text>
+  </view>
+  <!-- <navigator url="../../pages/detail/detail?name='111'" hover-class="navigator-hover">
   <view class="col">
   <text>9</text>
   </view>
-  </navigator>
+  </navigator> -->
   </view>
   </view>
   <!-- <view class="usermotto">

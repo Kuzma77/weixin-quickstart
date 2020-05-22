@@ -3,7 +3,7 @@ const API = require('../../api')
 const app = getApp();
 const API_BASE_URL = 'http://localhost:3000';
 const audioCtx = wx.createInnerAudioContext();
-const URL = 'http://m7.music.126.net/20200520121442/2a810e925558614c9cb98c36b322c7e6/ymusic/b71b/90a1/a8c1/086be29a8f5dc41752e70e1ef935a8ca.mp3'
+//const URL = 'http://m7.music.126.net/20200520121442/2a810e925558614c9cb98c36b322c7e6/ymusic/b71b/90a1/a8c1/086be29a8f5dc41752e70e1ef935a8ca.mp3'
 Page({
   /**
    * 页面的初始数据
@@ -18,16 +18,19 @@ Page({
     newsong_index: [], //首页最新音乐前6
     newsong: [], //最新音乐全部
     state:'paused',
-    playIndex:0,
-    play:{
-      name:'那个短发姑娘(Demo)',
-      al:{
-        picUrl:'https://p1.music.126.net/IT1ESyrIKhtmCc1XkEsPiA==/109951162835935771.jpg'
-      },
-      ar:{
-        name:'杨力'
-      }
-    }
+    showTime1: '0:00',
+    showTime2: '0:00',
+    duration: 0,
+    percent: 0,
+    // play:{
+    //   name:'那个短发姑娘(Demo)',
+    //   al:{
+    //     picUrl:'https://p1.music.126.net/IT1ESyrIKhtmCc1XkEsPiA==/109951162835935771.jpg'
+    //   },
+    //   ar:{
+    //     name:'杨力'
+    //   }
+    // }
   },
 
   /**
@@ -180,7 +183,14 @@ Page({
             play: res.data.songs[0],  //获取到歌曲的详细内容，传给song
           })
           list.play = res.data.songs[0]
-          app.globalData.playList.push(list)
+          const lists = []
+          app.globalData.playList.forEach(element => {
+          lists.push(element.audioId)
+         });
+         if(lists.indexOf(list.audioId) == -1){
+           app.globalData.playList.push(list)
+         }
+         console.log(lists)
           this.getPlayList()
           // console.log(res.data.songs[0].name)
           //app.globalData.songName = res.data.songs[0].name;
@@ -197,15 +207,31 @@ Page({
     // this.getTime(0)
     //this.createAudio(URL)
     this.handelId()
-  },
-
+},
   /**
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    var _this = this
+    audioCtx.onTimeUpdate(function (callback) {
+      _this.setData({
+        percent: audioCtx.currentTime
+      })
+      _this.changeShowTime1(_this.data.percent)
+    })
+    audioCtx.onEnded(function (callback) {
+      _this.setData({
+        percent: 0
+      })
+      audioCtx.play()
+    })
+    audioCtx.onSeeking(function (callback) {
+      _this.setData({
+        percent: audioCtx.currentTime
+      })
+      _this.changeShowTime1(_this.data.percent)
+    })
   },
-
   /**
    * 生命周期函数--监听页面隐藏
    */
@@ -265,14 +291,21 @@ Page({
   // silderChange:function(e){
   //   console.log(e.detail.value)
   // },
+  setTime:function(){
+
+  },
   //播放
   play:function(url){
-    audioCtx.stop()
+    console.log(audioCtx.duration)
+    //audioCtx.stop()
     audioCtx.src = url
     audioCtx.play()
     this.setData({
-      state:'running'
+      state:'running',
+      duration:audioCtx.duration
     })
+    this.changeShowTime2(this.data.duration)
+    this.changeShowTime1(this.data.percent)
     console.log(this.data.playList)
   },
   changePlay:function(audioId){
@@ -352,9 +385,14 @@ Page({
     var playList = app.globalData.playList
     for (let i = 0; i < playList.length; i++) {
       const id = playList[i].audioId;
-      if(id === audioId){
-        app.globalData.audioId = playList[i+1].audioId
-        this.handelId()
+      if(id === audioId ){
+        if(i<playList.length-1){
+          app.globalData.audioId = playList[i+1].audioId
+          this.handelId()
+        }else{
+          app.globalData.audioId = playList[0].audioId
+          this.handelId()
+        }
       }
     }
     // var index = this.data.playIndex >= this.data.playList.length-1? 0:this.data.playIndex + 1
@@ -369,8 +407,13 @@ Page({
     for (let i = 0; i < playList.length; i++) {
       const id = playList[i].audioId;
       if(id === audioId){
-        app.globalData.audioId = playList[i-1].audioId
+        if(i>0){
+           app.globalData.audioId = playList[i-1].audioId
         this.handelId()
+        }else{
+          app.globalData.audioId = playList[playList.length-1].audioId
+          this.handelId()
+        }
       }
     }
     // var index = this.data.playIndex <= 0? this.data.playList.length-1:this.data.playIndex - 1
@@ -378,10 +421,34 @@ Page({
     // this.setPlay(index)
     // this.play()
   },
-  changePlay:function(e){
-    var index = e.currentTarget.dataset.id
-    this.setMusic(index)
-    this.setPlay(index)
-    this.play()
-  }
+  // changePlay:function(e){
+  //   var index = e.currentTarget.dataset.id
+  //   this.setMusic(index)
+  //   this.setPlay(index)
+  //   this.play()
+  // }
+  //进度条实现
+  sliderChange:function(e){
+    var second = e.detail.value
+    audioCtx.seek(second)
+  },
+  //时间转化
+  changeShowTime1:function(second){
+    var a = Math.floor(second/60)
+    var b = Math.floor((second-60*a))
+    this.setData({
+      showTime1: this.PrefixInteger(a,2)+":"+this.PrefixInteger(b,2)
+    })
+  },
+  changeShowTime2:function(second){
+    var a = Math.floor(second/60)
+    var b = Math.floor((second-60*a))
+    this.setData({
+      showTime2: this.PrefixInteger(a,2)+":"+this.PrefixInteger(b,2)
+    })
+  },
+  //自动补0
+  PrefixInteger(num, n) {
+    return (Array(n).join(0) + num).slice(-n);
+}
 })
